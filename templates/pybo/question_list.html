@@ -13,6 +13,13 @@
                 <option value="popular" {% if so == 'popular' %}selected{% endif %}>인기순</option>
             </select>
         </div>
+        <div class="col-2">
+            <select class="form-control so">
+                <option value="nomal_question" {% if so == 'nomal_question' %}selected{% endif %}>일반</option>
+                <option value="lesson_pay" {% if so == 'lesson_pay' %}selected{% endif %}>레슨비</option>
+                <option value="add_lesson" {% if so == 'add_lesson' %}selected{% endif %}>보강</option>
+            </select>
+        </div>
         <div class="col-4 input-group">
             <input type="text" class="form-control kw" value="{{ kw|default_if_none:'' }}">
             <div class="input-group-append">
@@ -25,6 +32,7 @@
         <tr class="text-center table-bordered background-green">
             <th>번호</th>
             <th>추천</th>
+            <th>분류</th>
             <th style="width:50%">제목</th>
             <th>글쓴이</th>
             <th>작성일시</th>
