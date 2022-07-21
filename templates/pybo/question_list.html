@@ -53,6 +53,12 @@
                 </span>
                 {% endif %}
             </td>
+
+            <td class="text-left">
+                <a style="..." href="{% url 'pybo:detail' question.id %}"></a>
+                {{question.lQ}}
+            </td>
+
             <td class="text-left">
                 <a style="text-decoration:none;color:black;" href="{% url 'pybo:detail' question.id %}">
                     {{question.subject}}
@@ -63,7 +69,7 @@
                 </span>
                 {%endif%}
             </td>
-            <td> <div>text: </div>  </td>
+
 
             <td>{{ question.author.username }}</td> <!--글쓴이 추가-->
 
