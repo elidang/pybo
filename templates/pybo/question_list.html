@@ -14,7 +14,7 @@
             </select>
         </div>
         <div class="col-3">
-            <select class="form-control so id-changeTest onchange-selectBoxChange(this,value)">
+            <select class="form-control so">
                 <option value="일반" {% if so == 'nomal_question' %}selected{% endif %}>일반</option>
                 <option value="레슨비" {% if so == 'lesson_pay' %}selected{% endif %}>레슨비</option>
                 <option value="보강" {% if so == 'add_lesson' %}selected{% endif %}>보강</option>
@@ -57,9 +57,7 @@
             </td>
 
             <td class="text-left">
-                var selectBoxChange = function(value){console.log("값 변경 테스트:" +value);
-                $)"#changeinput").val(value);
-                }
+
 
             </td>
 
