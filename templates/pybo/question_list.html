@@ -43,7 +43,7 @@
         {% if question_list %}
         {% for question in question_list %}
         <tr class="text-center">
-            <td>
+            <td> <!-- 번호 = 전체건수 - 시작인덱스 - 현재인덱스 + 1 -->
                 {{ question_list.paginator.count|sub:question_list.start_index|sub:forloop.counter0|add:1}}
             </td>
             <td>
@@ -63,7 +63,8 @@
                 </span>
                 {%endif%}
             </td>
-            <td> {{question.lQ_set.count}}</td>
+            <td> <div>text: </div>  </td>
+
             <td>{{ question.author.username }}</td> <!--글쓴이 추가-->
 
             <td>{{question.create_date}}</td>
