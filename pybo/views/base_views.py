@@ -18,6 +18,22 @@ def index(request):
     page = request.GET.get('page', '1')  # 페이지
     kw =request.GET.get('kw', '') # 검색어
     so =request.GET.get('so', 'recent') #정렬 기준
+    lQ =request.GET.get('lQ', 'nomal_question')
+
+    if lQ == 'nomal_question':
+
+        question_list = Question.objects.annotate(num_voter=Count('voter')).order_by('-num_voter', '-create_date')
+
+    elif lQ == 'lesson_pay':
+
+        question_list = Question.objects.annotate(num_answer=Count('answer')).order_by('-num_answer', '-create_date')
+
+    else:  # add_lesson
+
+        question_list = Question.objects.order_by('-create_date')
+
+
+
     # 정렬
     if so == 'recommend':
 

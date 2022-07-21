@@ -13,7 +13,7 @@
                 <option value="popular" {% if so == 'popular' %}selected{% endif %}>인기순</option>
             </select>
         </div>
-        <div class="col-2">
+        <div class="col-3">
             <select class="form-control so">
                 <option value="nomal_question" {% if so == 'nomal_question' %}selected{% endif %}>일반</option>
                 <option value="lesson_pay" {% if so == 'lesson_pay' %}selected{% endif %}>레슨비</option>
@@ -119,6 +119,7 @@
     <input type="hidden" id="kw" name="kw" value="{{ kw|default_if_none:'' }}">
     <input type="hidden" id="page" name="page" value="{{ page }}">
     <input type="hidden" id="so" name="so" value="{{ so }}">
+    <input type="hidden" id="lQ" name="lQ" vlaue="{{ lQ }}">
 </form>
 {% endblock %}
 {% block script %}
@@ -136,6 +137,11 @@ $(document).ready(function(){
     });
     $(".so").on('change', function() {
         $("#so").val($(this).val());
+        $("#page").val(1);
+        $("#searchForm").submit();
+    });
+    $(".lQ").on('change', function() {
+        $("#lQ").val($(this).val());
         $("#page").val(1);
         $("#searchForm").submit();
     });
