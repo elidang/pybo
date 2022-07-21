@@ -20,7 +20,7 @@
                 <option value="보강" {% if so == 'add_lesson' %}selected{% endif %}>보강</option>
             </select>
         </div>
-        Int index=@ComboBoxGetCurSel(char* col-3);
+
 
         <div class="col-4 input-group">
             <input type="text" class="form-control kw" value="{{ kw|default_if_none:'' }}">
@@ -57,7 +57,7 @@
             </td>
 
             <td class="text-left">
-                int index=@ComboBoxGetCurSel("ComboBox1"); 
+                {{ index=@ComboBoxGetCurSel(col-3);}}
 
 
             </td>
