@@ -10,3 +10,5 @@ urlpatterns =[ path('login/', auth_views.LoginView.as_view(
                path('signup/', views.signup, name='signup'),
 
 ]
+
+handler404 = 'common.views.page_not_found'
